@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Clipmaster</title>
+  <link rel="stylesheet" href="/static/app.css?v=2" />
+</head>
+<body>
+  <header class="top">
+    <div>
+      <p class="brand">Clipmaster</p>
+      <h1>Shorts from a link, on this PC</h1>
+    </div>
+    <p id="health" class="health">Checking the local model…</p>
+  </header>
+
+  <main>
+    <form id="form" class="panel">
+      <label>
+        Video link
+        <input name="url" type="url" placeholder="YouTube, Twitch, or Kick. VOD or live." />
+      </label>
+      <label>
+        Or a file from this PC
+        <input name="file" type="file" accept="video/mp4,video/webm,video/quicktime,video/x-matroska,.mp4,.mkv,.webm,.mov" />
+      </label>
+      <div class="grid">
+        <label>
+          Max minutes
+          <input name="minutes" type="number" min="1" max="180" value="30" />
+        </label>
+        <label>
+          Clips
+          <input name="clips" type="number" min="1" max="10" value="5" />
+        </label>
+        <label>
+          Min seconds
+          <input name="min_sec" type="number" min="8" max="90" value="15" />
+        </label>
+        <label>
+          Max seconds
+          <input name="max_sec" type="number" min="15" max="180" value="60" />
+        </label>
+      </div>
+      <label class="check">
+        <input name="live_from_start" type="checkbox" />
+        <span>If the link is live, record from the beginning instead of from now</span>
+      </label>
+      <p class="hint">A normal video longer than Max minutes uses only the start of it. A live link records that many minutes, then the same clip pipeline runs. Speech is required.</p>
+      <label>
+        UniPost API key
+        <input name="unipost" type="password" autocomplete="off" placeholder="From app.unipost.dev" />
+      </label>
+      <button id="save-key" type="button" class="secondary">Save key</button>
+      <p id="tiktok-account" class="hint">TikTok posts wait for your approval. Subtitles stay burned in, and TikTok is not given a sound to put on top.</p>
+      <button id="submit" type="submit">Make clips</button>
+      <p id="form-error" class="error" hidden></p>
+    </form>
+
+    <section>
+      <h2>Jobs</h2>
+      <div id="jobs" class="jobs"></div>
+    </section>
+  </main>
+  <script src="/static/app.js?v=2"></script>
+</body>
+</html>
