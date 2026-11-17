@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Clipmaster
 
 Local shorts maker for this PC. Paste a YouTube, Twitch, or Kick link (a normal video or a live one), or upload a file. Clipmaster transcribes the speech, asks a local Ollama model which moments are worth posting, and writes vertical 9:16 clips with captions and a hook line.
@@ -34,3 +35,6 @@ Change the start, end, title, or hook on a finished clip and re-render it.
 Long videos are cut to **Max minutes** (default 30) so a multi-hour VOD does not fill the disk. Raise that field if you want more.
 
 Clips need speech. A silent gameplay capture has no transcript to cut on.
+=======
+# CLIPMASTER
+>>>>>>> 2b728a9235b214bcef9b3114374f649f718116a9
